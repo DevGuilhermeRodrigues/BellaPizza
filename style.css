@@ -47,14 +47,61 @@ body, html {
 }
 
 .link-menu-reserve {
-    background-color: #da123a;
+    font-family: 'Inter';
+    background-color: white;
     padding: 10px 15px;
     border-radius: 4px;
-    color: white;
-    font-weight: bold;
+    color: #da123a;
+    font-weight: 600;
     letter-spacing: 3px;
 }
 
-main section {
-    height: 80vh;
+.menu-btn {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    display: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-container {
+       position: relative;
+    }
+    
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-container {
+        position: absolute;
+        top: 62px;
+        right: 0;
+        width: 0;
+        height: 50vh;
+        background-color: #00983d;
+        transition: all 2s;
+    }
+
+    .nav-container.active {
+        width: 100%;
+    }
+
+    .menu-navigation {
+        display: none;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        opacity: 0;
+        transition: 2s;
+    }
+
+    .menu-navigation.active {
+        display: flex;
+        opacity: 1;
+    }
+
 }
